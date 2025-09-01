@@ -1,0 +1,75 @@
+Create a responsive, modern, and clean homepage for AC19 Global Services Ltd using React with Vite and Tailwind CSS (frontend only, no backend).
+
+Design Requirements:
+
+Primary color: #FE7E00 (orange)
+
+Secondary color: #343434 (dark gray)
+
+Font: Use a clean, professional Google font like Poppins or Inter
+
+Rounded corners, soft shadows, and a minimal modern style
+
+Smooth hover animations and scroll effects
+
+Header Requirements:
+
+Container layout with a logo placeholder on the left
+
+Navigation menu with links: Home, About Us, Services, Industries, Training Partners, News & Insights, Contact Us
+
+"Training Partners" should be a dropdown menu that expands to show Melodia Coding Academy.
+
+Sticky header with subtle shadow on scroll
+
+Sections for the Homepage:
+
+Hero Section
+
+Headline: "Driving Technology. Delivering Value."
+
+Subtext: "AC19 Global Services Ltd specializes in sourcing, deploying, supporting, and training software applications across industries, institutions, and public agencies."
+
+Two buttons: "Explore Our Services" (orange primary button) and "Partner With Us" (outline dark button).
+
+Background gradient or tech-themed hero image
+
+Key Highlights Section
+
+4 feature cards with icons and text for:
+
+Needs Assessment & Solution Design
+
+Global Technology Partnerships
+
+Proven Training & Digital Transformation
+
+Support for Corporates & Public Agencies
+
+Services Section
+
+Grid of cards describing key services: Software Sourcing, Critical Needs Assessment, Third-Party Engagement, Training, and Support & Maintenance
+
+Industries We Serve
+
+Horizontal scroll or grid layout showing industries like Education, Government, Corporate, Healthcare, Financial Services
+
+Melodia Coding Academy Teaser
+
+Short blurb with a button leading to a dedicated page
+
+Footer
+
+Dark footer with quick links, contact info, and social icons
+
+White text with orange hover accents
+
+Other Requirements:
+
+Fully responsive for desktop, tablet, and mobile
+
+Clean, reusable components for navigation, buttons, and cards
+
+Smooth hover and transition effects
+
+Code should be clean and easy to customize
