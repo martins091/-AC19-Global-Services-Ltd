@@ -10,6 +10,9 @@ import Industries from "@/pages/industries";
 import NewsInsights from "@/pages/news-insights";
 import Contact from "@/pages/contact";
 import Melodia from "@/pages/melodia";
+import PrivacyPolicy from "@/pages/privacy-policy";
+import TermsOfService from "@/pages/terms-of-service";
+import CookiePolicy from "@/pages/cookie-policy";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/news-insights" component={NewsInsights} />
       <Route path="/contact" component={Contact} />
       <Route path="/melodia" component={Melodia} />
+      <Route path="/privacy-policy" component={PrivacyPolicy} />
+      <Route path="/terms-of-service" component={TermsOfService} />
+      <Route path="/cookie-policy" component={CookiePolicy} />
       <Route component={NotFound} />
     </Switch>
   );
