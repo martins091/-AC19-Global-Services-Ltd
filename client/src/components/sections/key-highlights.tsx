@@ -39,19 +39,20 @@ export default function KeyHighlights() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {highlights.map((highlight, index) => {
             const IconComponent = highlight.icon;
+            const animationDelay = index === 0 ? "fade-in-up" : index === 1 ? "fade-in-up-delay-1" : index === 2 ? "fade-in-up-delay-2" : "fade-in-up-delay-3";
             return (
               <div
                 key={index}
-                className="bg-card rounded-lg p-6 shadow-sm card-hover border border-border"
+                className={`bg-card rounded-xl p-8 shadow-lg card-hover border border-border/50 backdrop-blur-sm ${animationDelay}`}
                 data-testid={`highlight-card-${index}`}
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <IconComponent className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-6 floating-animation">
+                  <IconComponent className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground mb-3" data-testid={`highlight-title-${index}`}>
+                <h3 className="text-xl font-semibold text-card-foreground mb-4" data-testid={`highlight-title-${index}`}>
                   {highlight.title}
                 </h3>
-                <p className="text-muted-foreground" data-testid={`highlight-description-${index}`}>
+                <p className="text-muted-foreground leading-relaxed" data-testid={`highlight-description-${index}`}>
                   {highlight.description}
                 </p>
               </div>

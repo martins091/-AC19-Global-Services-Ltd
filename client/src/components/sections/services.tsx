@@ -44,29 +44,31 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const IconComponent = service.icon;
+            const animationDelay = index % 3 === 0 ? "fade-in-up" : index % 3 === 1 ? "fade-in-up-delay-1" : "fade-in-up-delay-2";
             return (
               <div
                 key={index}
-                className={`bg-card rounded-lg p-8 shadow-sm card-hover border border-border ${
+                className={`bg-card rounded-xl p-10 shadow-lg card-hover border border-border/50 backdrop-blur-sm ${animationDelay} ${
                   index === 4 ? "md:col-span-2 lg:col-span-1" : ""
                 }`}
                 data-testid={`service-card-${index}`}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                  <IconComponent className="w-10 h-10 text-primary" />
+                <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl flex items-center justify-center mb-8 floating-animation">
+                  <IconComponent className="w-12 h-12 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-card-foreground mb-4" data-testid={`service-title-${index}`}>
+                <h3 className="text-2xl font-semibold text-card-foreground mb-6" data-testid={`service-title-${index}`}>
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground mb-6" data-testid={`service-description-${index}`}>
+                <p className="text-muted-foreground mb-8 leading-relaxed" data-testid={`service-description-${index}`}>
                   {service.description}
                 </p>
                 <a
-                  href="#"
-                  className="text-primary hover:text-primary/80 font-medium btn-transition"
+                  href="#services"
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-semibold btn-transition group"
                   data-testid={`service-link-${index}`}
                 >
-                  Learn More →
+                  <span>Learn More</span>
+                  <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             );

@@ -29,12 +29,12 @@ export default function Header() {
   }, []);
 
   const navigationLinks = [
-    { name: "Home", href: "#", active: true },
-    { name: "About Us", href: "#" },
-    { name: "Services", href: "#" },
-    { name: "Industries", href: "#" },
+    { name: "Home", href: "/", active: true },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Industries", href: "#industries" },
     { name: "News & Insights", href: "#" },
-    { name: "Contact Us", href: "#" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   return (

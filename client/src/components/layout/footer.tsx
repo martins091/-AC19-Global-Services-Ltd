@@ -111,8 +111,8 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div className="text-secondary-foreground/80" data-testid="footer-address">
-                  123 Technology Drive<br />
-                  Innovation District, City 12345
+                  18 Ibe Arinze Street<br />
+                  Okota, Lagos, Nigeria
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -125,15 +125,28 @@ export default function Footer() {
                   contact@ac19global.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a
-                  href="tel:+15551234567"
-                  className="text-secondary-foreground/80 hover:text-primary btn-transition"
-                  data-testid="footer-phone"
-                >
-                  +1 (555) 123-4567
-                </a>
+              <div className="flex items-start space-x-3">
+                <Phone className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                <div className="space-y-1">
+                  <div>
+                    <a
+                      href="tel:+2348099445455"
+                      className="text-secondary-foreground/80 hover:text-primary btn-transition"
+                      data-testid="footer-phone-1"
+                    >
+                      0809 944 5455
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="tel:+2348088942129"
+                      className="text-secondary-foreground/80 hover:text-primary btn-transition"
+                      data-testid="footer-phone-2"
+                    >
+                      08088942129
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
