@@ -32,9 +32,9 @@ export default function Header() {
     { name: "Home", href: "/", active: true },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Industries", href: "#industries" },
-    { name: "News & Insights", href: "#" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Industries", href: "/industries" },
+    { name: "News & Insights", href: "/news-insights" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
