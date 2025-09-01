@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,6 +19,7 @@ import {
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,10 +31,11 @@ export default function Header() {
   }, []);
 
   const navigationLinks = [
-    { name: "Home", href: "/", active: true },
+    { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Industries", href: "/industries" },
+    { name: "Melodia Academy", href: "/melodia" },
     { name: "News & Insights", href: "/news-insights" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -58,34 +61,43 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8" data-testid="desktop-navigation">
-          {navigationLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className={`font-medium btn-transition ${
-                link.active
-                  ? "text-foreground hover:text-primary"
-                  : "text-muted-foreground hover:text-primary"
-              }`}
-              data-testid={`nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navigationLinks.map((link) => {
+            const isActive = location === link.href;
+            return (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`relative font-medium transition-all duration-300 hover:scale-105 ${
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                } group`}
+                data-testid={`nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+              >
+                {link.name}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
+              </a>
+            );
+          })}
 
           {/* Training Partners Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger
-              className="text-muted-foreground hover:text-primary btn-transition font-medium flex items-center space-x-1"
+              className="relative text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-105 font-medium flex items-center space-x-1 group"
               data-testid="dropdown-training-partners"
             >
               <span>Training Partners</span>
-              <ChevronDown className="w-4 h-4" />
+              <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+              <span className="absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 w-0 group-hover:w-full" />
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-64" align="center">
-              <DropdownMenuItem className="flex flex-col items-start p-4">
-                <div className="font-medium">Melodia Coding Academy</div>
-                <div className="text-sm text-muted-foreground">Professional Development Training</div>
+              <DropdownMenuItem asChild>
+                <a href="/melodia" className="flex flex-col items-start p-4 cursor-pointer hover:bg-muted transition-colors">
+                  <div className="font-medium">Melodia Coding Academy</div>
+                  <div className="text-sm text-muted-foreground">Professional Development Training</div>
+                </a>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -108,27 +120,30 @@ export default function Header() {
               <SheetTitle>Navigation</SheetTitle>
             </SheetHeader>
             <div className="grid gap-4 py-6">
-              {navigationLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`block px-4 py-2 text-lg font-medium btn-transition ${
-                    link.active
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  data-testid={`mobile-nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navigationLinks.map((link) => {
+                const isActive = location === link.href;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className={`block px-4 py-2 text-lg font-medium transition-all duration-300 rounded-lg ${
+                      isActive
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    data-testid={`mobile-nav-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    {link.name}
+                  </a>
+                );
+              })}
               <div className="border-t pt-4">
                 <div className="px-4 py-2">
                   <div className="font-medium text-foreground mb-2">Training Partners</div>
                   <a
-                    href="#"
-                    className="block text-muted-foreground hover:text-primary btn-transition"
+                    href="/melodia"
+                    className="block px-4 py-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-all duration-300 rounded-lg"
                     onClick={() => setIsMobileMenuOpen(false)}
                     data-testid="mobile-nav-melodia"
                   >

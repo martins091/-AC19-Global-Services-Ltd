@@ -2,19 +2,19 @@ import { Twitter, Linkedin, Facebook, MapPin, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   const quickLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Our Services", href: "#" },
-    { name: "Industries", href: "#" },
-    { name: "Case Studies", href: "#" },
-    { name: "News & Insights", href: "#" },
+    { name: "About Us", href: "/about" },
+    { name: "Our Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
+    { name: "Case Studies", href: "/news-insights" },
+    { name: "News & Insights", href: "/news-insights" },
   ];
 
   const services = [
-    { name: "Software Sourcing", href: "#" },
-    { name: "Needs Assessment", href: "#" },
-    { name: "Training Programs", href: "#" },
-    { name: "Support & Maintenance", href: "#" },
-    { name: "Digital Transformation", href: "#" },
+    { name: "Software Sourcing", href: "/services" },
+    { name: "Needs Assessment", href: "/services" },
+    { name: "Training Programs", href: "/melodia" },
+    { name: "Support & Maintenance", href: "/services" },
+    { name: "Digital Transformation", href: "/services" },
   ];
 
   const legalLinks = [

@@ -9,6 +9,7 @@ import Services from "@/pages/services";
 import Industries from "@/pages/industries";
 import NewsInsights from "@/pages/news-insights";
 import Contact from "@/pages/contact";
+import Melodia from "@/pages/melodia";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/industries" component={Industries} />
       <Route path="/news-insights" component={NewsInsights} />
       <Route path="/contact" component={Contact} />
+      <Route path="/melodia" component={Melodia} />
       <Route component={NotFound} />
     </Switch>
   );
