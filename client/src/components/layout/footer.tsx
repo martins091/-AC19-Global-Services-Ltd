@@ -1,4 +1,5 @@
 import { Twitter, Linkedin, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import logo2 from "../../../pulic/images/logo2.png";
 
 export default function Footer() {
   const quickLinks = [
@@ -24,24 +25,28 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary text-secondary-foreground" data-testid="footer-main">
+    <footer
+      className="bg-secondary text-secondary-foreground"
+      data-testid="footer-main"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1" data-testid="footer-company-info">
+          <div
+            className="lg:col-span-1 w-60 h-60"
+            data-testid="footer-company-info"
+          >
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">AC</span>
-              </div>
-              <div>
-                <div className="text-lg font-semibold">AC19 Global Services</div>
-                <div className="text-xs text-secondary-foreground/70">Technology Solutions</div>
+              <div className="">
+                <img src={logo2} className="" alt="logo" />
               </div>
             </div>
             <p className="text-secondary-foreground/80 mb-6">
-              Driving technology innovation and delivering exceptional value through comprehensive software solutions and expert training programs.
+              Driving technology innovation and delivering exceptional value
+              through comprehensive software solutions and expert training
+              programs.
             </p>
-            
+
             {/* Social Icons */}
             <div className="flex space-x-4">
               <a
@@ -77,7 +82,9 @@ export default function Footer() {
                   <a
                     href={link.href}
                     className="text-secondary-foreground/80 hover:text-primary btn-transition"
-                    data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    data-testid={`footer-link-${link.name
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                   >
                     {link.name}
                   </a>
@@ -95,7 +102,9 @@ export default function Footer() {
                   <a
                     href={service.href}
                     className="text-secondary-foreground/80 hover:text-primary btn-transition"
-                    data-testid={`footer-service-${service.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    data-testid={`footer-service-${service.name
+                      .toLowerCase()
+                      .replace(/\s+/g, "-")}`}
                   >
                     {service.name}
                   </a>
@@ -110,8 +119,12 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <div className="text-secondary-foreground/80" data-testid="footer-address">
-                  18 Ibe Arinze Street<br />
+                <div
+                  className="text-secondary-foreground/80"
+                  data-testid="footer-address"
+                >
+                  18 Ibe Arinze Street
+                  <br />
                   Okota, Lagos, Nigeria
                 </div>
               </div>
@@ -157,7 +170,10 @@ export default function Footer() {
       <div className="border-t border-secondary-foreground/20 mt-12 pt-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-secondary-foreground/60 text-sm" data-testid="footer-copyright">
+            <div
+              className="text-secondary-foreground/60 text-sm"
+              data-testid="footer-copyright"
+            >
               © 2024 AC19 Global Services Ltd. All rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
@@ -166,7 +182,9 @@ export default function Footer() {
                   key={link.name}
                   href={link.href}
                   className="text-secondary-foreground/60 hover:text-primary text-sm btn-transition"
-                  data-testid={`footer-legal-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  data-testid={`footer-legal-${link.name
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
                 >
                   {link.name}
                 </a>
