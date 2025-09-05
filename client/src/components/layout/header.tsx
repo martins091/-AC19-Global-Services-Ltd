@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "../../../pulic/images/logo.png";
+// import logo from "../../../pulic/images/logo.png";
 import {
   Sheet,
   SheetContent,
@@ -55,7 +55,8 @@ export default function Header() {
           data-testid="logo-section"
         >
           <div className="">
-            <img src={logo} className="" alt="logo" />
+           <img src="/images/logo.png" alt="logo" />
+
           </div>
         </div>
 

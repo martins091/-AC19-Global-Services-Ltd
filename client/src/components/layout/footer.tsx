@@ -1,5 +1,4 @@
 import { Twitter, Linkedin, Facebook, MapPin, Mail, Phone } from "lucide-react";
-import logo2 from "../../../pulic/images/logo2.png";
 
 export default function Footer() {
   const quickLinks = [
@@ -38,7 +37,7 @@ export default function Footer() {
           >
             <div className="flex items-center space-x-2 mb-6">
               <div className="">
-                <img src={logo2} className="" alt="logo" />
+                <img src="/images/logo2.PNG" alt="logo" />
               </div>
             </div>
             <p className="text-secondary-foreground/80 mb-6">
